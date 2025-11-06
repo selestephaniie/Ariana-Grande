@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ariana Grande - Merch Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+    <header>
+        <h1>⋆ Ariana Grande ⋆</h1>
+        <h2>- Merch Oficial -</h2>
+            <!-- BANNER -->
+        <div class="banner">
+            <div class="slides">
+            <img src="img/Banner gif.gif" alt="Gif1">
+            <img src="img/Gif2.gif" alt="Gif2">
+            <img src="img/Banner gif.gif" alt="Gif1">
+            <img src="img/Negro.jfif" alt="Fondo">
+            <img src="img/Negro.jfif" alt="">
+            </div>
+                <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            </div>
+        </div>
+    </header>
+</head>
+
+<body>
+        <!-- PUNTOS -->
+    <script>
+        const slides = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+        let index = 0;
+
+        function showSlide(n) {
+        slides.style.transform = `translateX(${-n * 100}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[n].classList.add('active');
+        }
+
+        function nextSlide() {
+        index = (index + 1) % dots.length;
+        showSlide(index);
+        }
+
+        // Cambio automático cada 4 segundos
+        setInterval(nextSlide, 4000);
+
+        // Permite clic en los puntos
+        dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            index = i;
+            showSlide(index);
+        });
+        });
+    </script>
+
+    <!-- 💫 MENÚ -->
+    <nav>
+        <a href="#Babys">🎀Baby tees</a>
+        <a href="#Buzos">👁️‍🗨️Buzos</a>
+        <a href="#Remeras">🔖Remeras</a>
+        <a href="#Ubi">📍Ubicación</a>
+        <a href="#Redes">📸Redes</a>
+        <a href="#Perfumes">✨Perfumes</a>
+    </nav>
+
+        <!-- 👚 SECCIÓN BABY TEES -->
+    <section>
+        <center>
+            <h2 id="#Perfumes">✿Buzos</h2>
+            <h2> </h2>
+        </center>
+        <div class="grid">
+            <div class="product">
+                <a href="Perfume1.html">
+                    <div class="zoom-container">
+                        <img src="img/ARI1.jpeg" alt="Yes and? - Blanco">
+                    </div>
+                    <div class="product-info">
+                        <h3>'Ari' Ariana Grande</h3>
+                        <p>$120.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(1)">Añadir al carrito</button>
+            </div>
+
+        <div class="grid">
+            <div class="product">
+                <a href="Perfume2.html">
+                    <div class="zoom-container">
+                        <img src="img/Moonlight2.jpeg" alt="Moonlight">
+                    </div>
+                    <div class="product-info">
+                        <h3>Moonlight</h3>
+                        <p>$156.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(2)">Añadir al carrito</button>
+            </div>
+
+        <div class="product">
+                <a href="Perfume3.html">
+                    <div class="zoom-container">
+                        <img src="img/SLK2.jpeg" alt="Sweet Like Candy">
+                    </div>
+                    <div class="product-info">
+                        <h3>Sweet Like Candy</h3>
+                        <p>$180.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(3)">Añadir al carrito</button>
+            </div>
+        <div class="product">
+                <a href="Perfume4.html">
+                    <div class="zoom-container">
+                        <img src="img/Frankie1.jpeg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <h3>'Frankie'</h3>
+                        <p>$92.00 USD</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(4)">Añadir al carrito</button>
+            </div>
+        </section>
+        
+    <!-- 👚 SECCIÓN BABY TEES -->
+    <section>
+        <center>
+            <h2 id="Babys">✿ Baby tees</h2>
+            <h2> </h2>
+        </center>
+        <div class="grid">
+            <div class="product">
+                <a href="producto1.html">
+                    <div class="zoom-container">
+                        <img src="img/TOPSproducto1.png" alt="Yes and? - Blanco">
+                    </div>
+                    <div class="product-info">
+                        <h3>Top 'Yes, and?'</h3>
+                        <p>$17.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(5)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto2.html">
+                    <div class="zoom-container">
+                        <img src="img/TOPSproducto2.png" alt="Top Et. Sunshine">
+                    </div>
+                    <div class="product-info">
+                        <h3>Top 'Et. Sunshine'</h3>
+                        <p>$17.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(6)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto3.html">
+                    <div class="zoom-container">
+                        <img src="img/TOPSproducto3.png" alt="My Everything - Negro">
+                    </div>
+                    <div class="product-info">
+                        <h3>Top 'My Everything'</h3>
+                        <p>$19.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(7)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto4.html">
+                    <div class="zoom-container">
+                        <img src="img/TOPSproducto4.png" alt="We can’t be friends - Blanco">
+                    </div>
+                    <div class="product-info">
+                        <h3>Top 'We can’t be friends'</h3>
+                        <p>$19.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(8)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🧥 SECCIÓN BUZOS -->
+    <section>
+        <center>
+            <h2 id="Buzos">✿ Buzos</h2>
+            <h2> </h2>
+        </center>
+        <div class="grid">
+            <div class="product">
+                <a href="producto5.html">
+                    <div class="zoom-container">
+                        <img src="img/BUZOSproducto1.jpg" alt="Buzo Positions">
+                    </div>
+                    <div class="product-info">
+                        <h3>Buzo 'Positions'</h3>
+                        <p>$40.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(9)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto6.html">
+                    <div class="zoom-container">
+                        <img src="img/BUZOSproducto2.jpg" alt="Buzo Sweetener">
+                    </div>
+                    <div class="product-info">
+                        <h3>Buzo 'Positions'</h3>
+                        <p>$40.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(10)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto7.html">
+                    <div class="zoom-container">
+                        <img src="img/BUZOSproducto3.jpg" alt="Buzo Sweetener">
+                    </div>
+                    <div class="product-info">
+                        <h3>Buzo 'Dangerous Woman' </h3>
+                        <p>$40.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(11)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto8.html">
+                    <div class="zoom-container">
+                        <img src="img/BUZOSproducto4.jpg" alt="Buzo Sweetener">
+                    </div>
+                    <div class="product-info">
+                        <h3>Buzo 'Die for you'</h3>
+                        <p>$40.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(12)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👕 SECCIÓN REMERAS -->
+    <section>
+        <center>
+            <h2 id="Remeras">✿ Remeras</h2>
+            <h2> </h2>
+        </center>
+        <div class="grid">
+            <div class="product">
+                <a href="producto9.html">
+                    <div class="zoom-container">
+                        <img src="img/REMproducto1.jpg" alt="Remera ET Sunshine">
+                    </div>
+                    <div class="product-info">
+                        <h3>Remera 'Et Sunshine'</h3>
+                        <p>$23.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(13)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto10.html">
+                    <div class="zoom-container">
+                        <img src="img/REMproducto2.jpg" alt="Remera Et Sun. Deluxe">
+                    </div>
+                    <div class="product-info">
+                        <h3>Remera Et Sun. Deluxe</h3>
+                        <p>$23.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(14)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto11.html">
+                    <div class="zoom-container">
+                        <img src="img/REMproducto3.jpg" alt="Remera Positions">
+                    </div>
+                    <div class="product-info">
+                        <h3>Remera Positions</h3>
+                        <p>$23.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(15)">Añadir al carrito</button>
+            </div>
+
+            <div class="product">
+                <a href="producto12.html">
+                    <div class="zoom-container">
+                        <img src="img/REMproducto4.jpg" alt="Remera Sweetener">
+                    </div>
+                    <div class="product-info">
+                        <h3>Remera Sweetener</h3>
+                        <p>$23.00</p>
+                    </div>
+                </a>
+                <button onclick="agregarDesdeIndex(16)">Añadir al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    
+        <section class="carrito" id="panelCarrito">
+            <h3>🛒 Tu carrito</h3>
+            <ul id="listaCarrito"></ul>
+            <div class="acciones-carrito">
+            <button id="vaciarCarrito" class="boton">Vaciar carrito</button>
+            </div>
+        </section>
+
+    <center>
+        <section id="Ubi">
+            <h2>Nuestra ubicación 📍</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.45340261051!2d-58.51569881524787!3d-34.615654769813595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e87!2sBuenos%20Aires%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1760071613404!5m2!1ses-419!2sar"
+                width="100%"
+                height="400" 
+                style="border: 3px solid #f777e6; border-radius: 10px; box-shadow: 0 4px 8px rgb(243, 133, 247);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"> 
+            </iframe> 
+        </section> 
+
+        <section id="Redes">
+            <h2>Nuestras redes:</h2>
+            <ul>
+                <li>Instagram: @selestephanie</li>
+                <li>Gmail: selestephanie@gmail.com</li>
+                <li>WhatsApp: +5491125799127</li>
+            </ul>
+        </section>
+    </center>
+
+    <!-- 🛍️ BOTÓNES -->
+    <button id="boton-carrito" class="btn-carrito">🛍️ <span id="contador-carrito">0</span></button>
+    <div class="boton-flotante boton-musica" id="botonMusica">🎵</div>
+
+    <audio id="musicaFondo" loop>
+        <source src="Instrumental.mp3" type="audio/mpeg">
+    </audio>
+
+    <center>
+        <footer>By @selestephanie</footer>
+    </center>
+    
+
+<script>
+    const botonMusica = document.getElementById('botonMusica');
+    const musica = document.getElementById('musicaFondo');
+    let reproduciendo = false;
+
+    botonMusica.addEventListener('click', () => {
+      if (!reproduciendo) {
+        musica.play();
+        botonMusica.textContent = '🔇'; // cambia icono al apagar
+      } else {
+        musica.pause();
+        botonMusica.textContent = '🎵'; // cambia icono al prender
+      }
+      reproduciendo = !reproduciendo;
+    });
+        const productos = [
+            { id: 1, nombre: "Perfume 'Ari'", precio: 120.00 },
+            { id: 2, nombre: "Perfume 'Moonlight'", precio: 156.00 },
+            { id: 3, nombre: "Perfume 'Sweet Like Candy'", precio: 180.00 },
+            { id: 4, nombre: "Perfume 'Frankie'", precio: 92.00 },
+            { id: 5, nombre: "Top 'Yes, And?'", precio: 17.00 },
+            { id: 6, nombre: "Top 'Et Sunshine'", precio: 17.00 },
+            { id: 7, nombre: "Top 'My Everything'", precio: 17.00 },
+            { id: 8, nombre: "Top 'We cant be friends'", precio: 17.00 },
+            { id: 9, nombre: "Buzo 'Positions'", precio: 40.00 },
+            { id: 10, nombre: "Buzo 'Positions' 2", precio: 40.00 },
+            { id: 11, nombre: "Buzo 'Dangerous Woman'", precio: 40.00 },
+            { id: 12, nombre: "Buzo 'Die for you'", precio: 40.00 },
+            { id: 13, nombre: "Remera 'Et Sunshine'", precio: 23.00 },
+            { id: 14, nombre: "Remera 'Et Sun. Deluxe'", precio: 23.00 },
+            { id: 15, nombre: "Remera 'Positions'", precio: 23.00 },
+            { id: 16, nombre: "Remera 'Sweetener'", precio: 23.00 }
+        ];
+
+        function obtenerCarrito() {
+            return JSON.parse(localStorage.getItem("carrito")) || [];
+        }
+
+        function guardarCarrito(carrito) {
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
+
+        function actualizarContador() {
+            const carrito = obtenerCarrito();
+            const total = carrito.reduce((s, i) => s + i.cantidad, 0);
+            const contador = document.getElementById("contador-carrito");
+            if (contador) contador.textContent = total;
+        }
+
+        function renderCarrito() {
+            const lista = document.getElementById("listaCarrito");
+            if (!lista) return;
+            const carrito = obtenerCarrito();
+            lista.innerHTML = "";
+
+            if (carrito.length === 0) {
+            lista.innerHTML = "<p>Tu carrito está vacío 💔</p>";
+            return;
+            }
+
+            carrito.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <span>${item.nombre} x${item.cantidad} — $${(item.precio * item.cantidad).toFixed(2)}</span>
+                <button data-index="${index}">🗑️</button>
+            `;
+            lista.appendChild(li);
+            });
+
+            document.querySelectorAll("#listaCarrito button").forEach(btn => {
+            btn.addEventListener("click", e => {
+                const index = e.target.dataset.index;
+                let carrito = obtenerCarrito();
+                carrito.splice(index, 1);
+                guardarCarrito(carrito);
+                renderCarrito();
+                actualizarContador();
+            });
+            });
+        }
+
+        function agregarDesdeIndex(id) {
+            const producto = productos.find(p => p.id === id);
+            if (!producto) return;
+            let carrito = obtenerCarrito();
+            const existente = carrito.find(p => p.id === id);
+            if (existente) existente.cantidad++;
+            else carrito.push({ ...producto, cantidad: 1 });
+            guardarCarrito(carrito);
+            actualizarContador();
+            renderCarrito();
+            alert(`${producto.nombre} agregado al carrito 🛍️`);
+        }
+
+        function agregarDesdeProducto(id, cantidad = 1, color = "#fff") {
+            const producto = productos.find(p => p.id === id);
+            if (!producto) return;
+            let carrito = obtenerCarrito();
+            const existente = carrito.find(p => p.id === id && p.color === color);
+            if (existente) existente.cantidad += cantidad;
+            else carrito.push({ ...producto, color, cantidad });
+            guardarCarrito(carrito);
+            actualizarContador();
+            renderCarrito();
+            alert(`${cantidad} "${producto.nombre}" agregado al carrito 🛍️`);
+        }
+
+        // Vaciar carrito
+        const btnVaciar = document.getElementById("vaciarCarrito");
+        if (btnVaciar) {
+            btnVaciar.addEventListener("click", () => {
+            if (confirm("¿Seguro que querés vaciar tu carrito? 🧺")) {
+                localStorage.removeItem("carrito");
+                renderCarrito();
+                actualizarContador();
+            }
+            });
+        }
+
+        // Iniciar
+        actualizarContador();
+        renderCarrito();
+</script>
+</body>
+</html>

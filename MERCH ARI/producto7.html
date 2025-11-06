@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariana Grande - Merch Oficial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+  <style>
+body {
+    font-family: "Spectral", serif;
+    background-color: #f3e5f5;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+}
+
+header {
+    background-color: #d58be2;
+    padding: 10px;
+    text-align: center;
+    background-color: #d58be2;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+  font-family: "Sacramento", cursive; /* esta sí está importada */
+  font-size: 65px;
+  color: #fce6ff;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+    /* CONTENEDOR DEL SLIDER */
+    .banner {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 300px;
+      margin: 80px auto;
+      overflow: hidden;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* contenedor general */
+    .contenedor {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px; /* separación entre cuadros */
+      margin-top: 60px;
+    }
+
+    /* cuadro del producto */
+    .producto, .informacion{
+      background-color: rgb(255, 255, 255);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(217, 168, 255, 0.922);
+      padding: 25px;
+      width: 560px;
+      text-align: center;
+    }
+    .carrito {
+      background-color: rgb(255, 255, 255);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(217, 168, 255, 0.922);
+      padding: 25px;
+      width: 500px;
+      text-align: center;
+    }
+
+    .producto img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .precio {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .boton {
+      background-color: #000000;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .boton:hover {
+      background-color: #9d00ff;
+    }
+    .colores {
+      display: flex;
+      justify-content: center;
+      gap: 10px; /* espacio entre los círculos */
+      margin-top: 15px;
+    }
+
+    .color {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      cursor: pointer;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .color:hover {
+      transform: scale(1.1);
+      border-color: #9d00ff;
+    }
+
+    .color.seleccionado {
+      border-color: #9d00ff;
+      box-shadow: 0 0 5px #c68cff;
+    }
+    
+    .pago, .comprobante {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(217, 168, 255, 0.922);
+      padding: 25px;
+      width: 450px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .oculto {
+      display: none;
+    }
+
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 6px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .producto-opciones {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(217, 168, 255, 0.4);
+      width: 300px;
+      text-align: center;
+    }
+
+    h4 {
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .talles {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .talle {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 40px;
+      height: 35px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .talle:hover {
+      border-color: #b67cff;
+    }
+
+    .talle.activo {
+      background-color: #b67cff;
+      color: white;
+      border-color: #b67cff;
+    }
+
+    .guia-talles {
+      font-size: 13px;
+      color: #444;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .cantidad {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #000;
+      border-radius: 8px;
+      width: 120px;
+      margin: 0 auto;
+    }
+
+    .cantidad button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      padding: 8px;
+      cursor: pointer;
+      width: 40px;
+    }
+
+    .cantidad span {
+      width: 40px;
+      text-align: center;
+      font-size: 15px;
+    }
+
+    .cantidad button:hover {
+      color: #b67cff;
+    }
+  .modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contenido {
+  background: white;
+  border-radius: 15px;
+  margin: 60px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.modal-contenido img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.cerrar {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cerrar:hover {
+  color: #9d00ff;
+}
+
+  </style>
+</head>
+
+<body>
+  <header><h1>⋆ Merch Ariana - Tops ⋆</h1></header>
+    <button id="boton-carrito" class="btn-carrito">🛍️ <span id="contador-carrito">0</span></button>
+    <div class="contenedor">
+      <div class="producto">
+        <img src="img/TOPSproducto1.png" alt="Top Yes, and?">
+        <h2>Top “Yes, and?”</h2>
+        <p class="precio">$18.99</p>
+      </div>
+
+      <div class="informacion">
+        <h2>Información de producto</h2>
+        <p>Top sin mangas con estampado de la portada 'Yes, and?'. Disponible en tres colores; Blanco, negro, gris y rosa palido.</p> 
+
+          <h4>Talles:</h4>
+        <div class="guia-talles">📏 Guía de talles</div>
+          <!-- Modal -->
+          <div id="modalTalles" class="modal">
+            <div class="modal-contenido">
+              <span class="cerrar">&times;</span>
+              <img src="img/Tabla_dama.jpg" alt="📏Guía de talles" />
+            </div>
+          </div>
+
+          <div class="talles">
+            <div class="talle">s</div>
+            <div class="talle activo">m</div>
+            <div class="talle">l</div>
+            <div class="talle">xl</div>
+          </div>
+
+          <h4>Color:</h4>
+        <div class="colores">
+          <div class="color seleccionado" data-color="#Blanco" style="background:#ffffff;"></div>
+          <div class="color" data-color="#Negro" style="background:#000000;"></div>
+          <div class="color" data-color="#Gris" style="background:#c1c1c1;"></div>
+          <div class="color" data-color="#Rosa" style="background:#f39bfb;"></div>
+        </div>
+
+        <h4>Cantidad: </h4>
+          <div class="cantidad">
+            <button id="menos">−</button>
+            <span id="cantidad">2</span>
+            <button id="mas">+</button>
+          </div>
+
+        <p></p>
+
+        <button id="agregarCarrito" class="boton">Agregar al carrito</button>
+            <section class="carrito">
+            <h3>Carrito</h3>
+            <p>No hay productos aún.</p>
+            <ul id="listaCarrito"></ul>
+          <button id="irPago" class="boton">Ir al pago</button>
+
+                <!-- SECCIÓN DE PAGO -->
+        <section class="pago oculto" id="pagoSeccion">
+          <h3>Pago simulado</h3>
+          <form id="formPago">
+            <input type="text" name="nombre" placeholder="Nombre en tarjeta" required>
+            <input type="text" name="numero" maxlength="19" placeholder="Número de tarjeta" required>
+            <input type="text" name="vencimiento" placeholder="MM/AA" required>
+            <input type="text" name="cvv" maxlength="4" placeholder="CVV" required>
+            <button type="submit" class="boton">Procesar pago</button>
+          </form>
+          <p id="resultadoPago"></p>
+        </section>
+
+        <!-- SECCIÓN DE COMPROBANTE -->
+        <section class="comprobante oculto" id="comprobanteSeccion">
+          <h3>Comprobante</h3>
+          <div id="detalleComprobante"></div>
+          <button id="descargarPdf" class="boton">Descargar PDF</button>
+        </section>
+      </section>
+    </div>
+  </div>
+
+<script>
+  document.querySelectorAll(".talle").forEach(t => {
+  t.addEventListener("click", () => {
+    document.querySelectorAll(".talle").forEach(x => x.classList.remove("activo"));
+    t.classList.add("activo");
+  });
+});
+const modal = document.getElementById("modalTalles");
+const btn = document.querySelector(".guia-talles"); // ✅ esto sí existe
+const cerrar = document.querySelector(".cerrar");
+
+btn.onclick = () => modal.style.display = "block";
+cerrar.onclick = () => modal.style.display = "none";
+window.onclick = e => { if (e.target === modal) modal.style.display = "none"; };
+
+
+  // Productos disponibles
+  const productos = [
+    { id: 1, nombre: 'Top "Yes, and?"', precio: 18.99 }
+  ];
+
+  let colorSeleccionado = "#ffffff";
+  let cantidad = 2;
+
+  // Selección de color
+  document.querySelectorAll(".color").forEach(c => {
+    c.addEventListener("click", () => {
+      document.querySelectorAll(".color").forEach(x => x.classList.remove("seleccionado"));
+      c.classList.add("seleccionado");
+      colorSeleccionado = c.dataset.color;
+    });
+  });
+
+  // Control de cantidad (+ y -)
+  const cantidadSpan = document.getElementById("cantidad");
+  const menosBtn = document.getElementById("menos");
+  const masBtn = document.getElementById("mas");
+
+  menosBtn.addEventListener("click", () => {
+    if (cantidad > 1) cantidad--;
+    cantidadSpan.textContent = cantidad;
+  });
+
+  masBtn.addEventListener("click", () => {
+    cantidad++;
+    cantidadSpan.textContent = cantidad;
+  });
+
+  // -----------------------------
+  // FUNCIONES DEL CARRITO GLOBAL
+  // -----------------------------
+
+  
+  function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+  }
+
+  function guardarCarrito(carrito) {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+
+  function actualizarContador() {
+    const carrito = obtenerCarrito();
+    const total = carrito.reduce((s, i) => s + i.cantidad, 0);
+    document.getElementById("contador-carrito").textContent = total;
+  }
+
+  function renderCarrito() {
+    const carrito = obtenerCarrito();
+    const lista = document.getElementById("listaCarrito");
+    lista.innerHTML = "";
+
+    if (carrito.length === 0) {
+      lista.innerHTML = "<p>Tu carrito está vacío 💔</p>";
+      return;
+    }
+
+    carrito.forEach((p, i) => {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        ${p.nombre} (${p.color}) x${p.cantidad} — $${(p.precio * p.cantidad).toFixed(2)}
+        <button class="eliminar-item" data-index="${i}" style="
+          background: none; 
+          border: none; 
+          color: red; 
+          font-size: 16px; 
+          cursor: pointer;
+          margin-left: 10px;">🗑️</button>
+      `;
+      lista.appendChild(li);
+    });
+
+    // Botones de eliminar
+    document.querySelectorAll(".eliminar-item").forEach(btn => {
+      btn.addEventListener("click", e => {
+        const index = e.target.dataset.index;
+        let carrito = obtenerCarrito();
+        carrito.splice(index, 1);
+        guardarCarrito(carrito);
+        renderCarrito();
+        actualizarContador();
+      });
+    });
+  }
+
+  // -----------------------------
+  // BOTÓN "AGREGAR AL CARRITO"
+  // -----------------------------
+  document.getElementById("agregarCarrito").addEventListener("click", () => {
+    const producto = productos[0];
+    let carrito = obtenerCarrito();
+
+    // Buscar si ya existe
+    const existente = carrito.find(p => p.id === producto.id && p.color === colorSeleccionado);
+
+    if (existente) {
+      existente.cantidad += cantidad;
+    } else {
+      carrito.push({
+        id: producto.id,
+        nombre: producto.nombre,
+        precio: producto.precio,
+        color: colorSeleccionado,
+        cantidad: cantidad
+      });
+    }
+
+    guardarCarrito(carrito);
+    actualizarContador();
+    renderCarrito();
+
+    alert(`${cantidad} "${producto.nombre}" agregado al carrito 🛍️`);
+  });
+
+  // -----------------------------
+  // BOTÓN 🛍️ (ver carrito)
+  // -----------------------------
+  document.getElementById("boton-carrito").addEventListener("click", () => {
+    const carrito = obtenerCarrito();
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío 💔");
+      return;
+    }
+
+    let mensaje = "🛒 Tu carrito:\n\n";
+    carrito.forEach(item => {
+      mensaje += `${item.nombre} (${item.color}) x${item.cantidad} — $${(item.precio * item.cantidad).toFixed(2)}\n`;
+    });
+    const total = carrito.reduce((s, i) => s + i.precio * i.cantidad, 0);
+    mensaje += `\nTotal: $${total.toFixed(2)}`;
+    alert(mensaje);
+  });
+
+  // -----------------------------
+  // IR AL PAGO + COMPROBANTE
+  // -----------------------------
+  document.getElementById("irPago").addEventListener("click", () => {
+    const carrito = obtenerCarrito();
+    if (carrito.length === 0) {
+      alert("El carrito está vacío");
+      return;
+    }
+    document.getElementById("pagoSeccion").classList.remove("oculto");
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+  });
+
+  document.getElementById("formPago").addEventListener("submit", e => {
+    e.preventDefault();
+    const res = document.getElementById("resultadoPago");
+    res.textContent = "Procesando pago...";
+    setTimeout(() => {
+      res.textContent = "Pago exitoso ✅";
+      mostrarComprobante();
+    }, 1200);
+  });
+
+  function mostrarComprobante() {
+    const carrito = obtenerCarrito();
+    const seccion = document.getElementById("comprobanteSeccion");
+    const div = document.getElementById("detalleComprobante");
+    const total = carrito.reduce((s, p) => s + p.precio * p.cantidad, 0);
+    div.innerHTML = `
+      <p><strong>ID:</strong> TX-${Date.now()}</p>
+      <ul>${carrito.map(p => `<li>${p.nombre} - ${p.color} x${p.cantidad} - $${(p.precio * p.cantidad).toFixed(2)}</li>`).join("")}</ul>
+      <p><strong>Total:</strong> $${total.toFixed(2)}</p>
+      <p><strong>Fecha:</strong> ${new Date().toLocaleString()}</p>
+    `;
+    seccion.classList.remove("oculto");
+  }
+  actualizarContador();
+  renderCarrito();
+</script>
+
+
+</body>
+</html>
