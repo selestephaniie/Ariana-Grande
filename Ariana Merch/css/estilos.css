@@ -1,0 +1,309 @@
+body {
+  font-family: "Spectral", serif;
+  background-color: #f3e5f5;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  background: #f3f3f3;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+header {
+  background-color: #d58be2;
+  padding: 10px;
+  text-align: center;
+}
+
+/* === SLIDER === */
+.banner {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 300px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slides img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dot.active {
+  background: white;
+}
+
+header h1 {
+  font-family: "Sacramento", cursive;
+  font-size: 100px;
+  color: #fce6ff;
+  letter-spacing: 2px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+nav {
+  background-color: #ca72da;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+nav a {
+  margin: 8px;
+  text-decoration: none;
+  color: #ffffff !important;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #f5b3ff !important;
+}
+
+section {
+  padding: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+img:hover {
+  filter: brightness(1.1) saturate(1.0);
+  transition: 0.3s;
+}
+
+.product {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.product-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.zoom-container {
+  overflow: hidden;
+  width: 100%;
+  height: 250px;
+}
+
+.zoom-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.zoom-container:hover img {
+  transform: scale(1.8);
+}
+
+a, a:visited, a:hover, a:active {
+  color: #000000;
+  text-decoration: none;
+}
+
+.detalle-producto {
+  text-align: center;
+  padding: 40px;
+}
+
+/* === BOTÓN DEL CARRITO === */
+.btn-carrito {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d58be2 !important;
+  border: none !important;
+  border-radius: 50% !important;
+  color: white !important;
+  font-size: 20px !important;
+  padding: 15px !important;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+/* === CARRITO DE COMPRAS === */
+.carrito {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(217, 168, 255, 0.922);
+  padding: 25px;
+  width: 320px;
+  margin: 20px auto;
+  text-align: left;
+}
+.boton-flotante {
+  position: fixed;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #d58be2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+  z-index: 1000;
+}
+  /* Ubicaciones */
+.boton-carrito {
+  bottom: 20px;
+}
+
+.boton-musica {
+  bottom: 80px; /* uno arriba del carrito */
+}
+
+.carrito h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.carrito ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.carrito li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+
+.acciones-carrito {
+  display: flex;
+  justify-content: center;
+}
+
+.acciones-carrito .boton {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.acciones-carrito .boton:hover {
+  background-color: #9d00ff;
+}
+
+/* === BOTONES GENERALES (excluye el del carrito) === */
+button:not(.btn-carrito), .boton:not(.btn-carrito), button.agregar-carrito {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+button:not(.btn-carrito):hover,
+button.agregar-carrito:hover {
+  background-color: #9d00ff !important;
+  transform: scale(1.05);
+}
+
+button a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* === SLIDER === */
+.slider {
+  position: relative;
+  width: 100%;
+}
+
+.slider img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Flechas del slider */
+.flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.flecha:hover {
+  background: #9d00ff;
+}
+
+.flecha.izq { left: 10px; }
+.flecha.der { right: 10px; }
